@@ -2,6 +2,21 @@ import React from 'react'
 import { Container } from './ui/container'
 import Link from 'next/link'
 
+const routes = [
+    {
+        href: "/",
+        label:"Tools",
+    },
+    {
+        href: "/",
+        label:"About",
+    },
+    {
+        href: "/",
+        label:"Contact",
+    },
+]
+
 export const Header = () => {
   return (
     <header className='sm:flex sm:justify-between py-3 px-4 border-b'>
@@ -13,6 +28,11 @@ export const Header = () => {
                     </Link>
                 </div>
             </div>
+            <nav className="mx-6 flex items-center">
+                {routes.map((route,i)=>(
+                    <Link key={i} href={route.href}>{route.label}</Link>
+                ))}
+            </nav>
         </Container>
     </header>
   )
