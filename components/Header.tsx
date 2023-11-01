@@ -2,6 +2,8 @@ import React from "react";
 import { Container } from "./ui/container";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { ArrowRightSquare } from "lucide-react";
+import ModeToggle from "./ui/ModeToggle";
 
 const routes = [
   {
@@ -28,16 +30,29 @@ export const Header = () => {
               <h1 className="text-xl font-bold">DevToolKit</h1>
             </Link>
           </div>
-        </div>
-        <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 md:Block">
-          {routes.map((route, i) => (
-            <Button asChild variant={"ghost"}>
-              <Link key={i} href={route.href} className="text-sm font-medium transition-colors">
-                {route.label}
-              </Link>
+
+          <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 hidden md:block">
+            {routes.map((route, i) => (
+              <Button asChild variant={"ghost"}>
+                <Link
+                  key={i}
+                  href={route.href}
+                  className="text-sm font-medium transition-colors"
+                >
+                  {route.label}
+                </Link>
+              </Button>
+            ))}
+          </nav>
+          <div className="flex items-center">
+            <Button variant={"ghost"} >
+                <span className="pr-3">Add new tool</span>
+                <ArrowRightSquare className="h-6 w-6"/>
             </Button>
-          ))}
-        </nav>
+            <ModeToggle/>
+          </div>
+
+        </div>
       </Container>
     </header>
   );
