@@ -44,7 +44,7 @@ export const Header = () => {
               </Button>
             ))}
           </nav>
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
             <Button variant={"ghost"} >
                 <span className="pr-3">Add new tool</span>
                 <ArrowRightSquare className="h-6 w-6"/>
