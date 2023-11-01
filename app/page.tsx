@@ -1,11 +1,11 @@
-import NavBar from "@/components/navbar";
+import { Header } from "@/components/Header";
 import ModeToggle from "@/components/ui/ModeToggle";
 
 export default function Home() {
   return (
-    <main className="">
-      <NavBar/>
+    <div>
+      <Header/>
       <ModeToggle />
-    </main>
+    </div>
   );
 }
