@@ -8,7 +8,6 @@ export default function Home() {
     <>
     <Hero />
     <CategoryTabs/>
-    <ToolCard/>
     <ToolCardsLayout/>
     </>
   );
