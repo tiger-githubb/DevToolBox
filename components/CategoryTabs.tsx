@@ -129,7 +129,7 @@ const routes = [
 export default function CategoryTabs() {
   return (
     <>
-      <div className="md:container mt-6">
+      <div className="md:container my-6">
         <ScrollArea className=" whitespace-nowrap rounded-md border">
           <div className="flex w-max space-x-4 p-4 items-center lg:space-x-6">
             <Button asChild variant={"default"}>
