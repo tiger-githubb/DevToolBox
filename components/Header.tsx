@@ -38,7 +38,7 @@ export const Header = () => {
               <SheetContent side={"left"} className="w-[300px] sm:w[400px]">
                 <nav className=" flex flex-col gap-4 mt-5">
                   {routes.map((route, i) => (
-                    <Button asChild variant={"ghost"}>
+                    <Button asChild key={i} variant={"ghost"}>
                       <Link
                         key={i}
                         href={route.href}
@@ -59,7 +59,7 @@ export const Header = () => {
 
           <nav className="mx-6  items-center space-x-4 lg:space-x-6 hidden md:block">
             {routes.map((route, i) => (
-              <Button asChild variant={"ghost"}>
+              <Button asChild key={i} variant={"ghost"}>
                 <Link
                   key={i}
                   href={route.href}
