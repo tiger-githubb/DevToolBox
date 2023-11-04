@@ -63,7 +63,7 @@ export const Header = () => {
                 <Link
                   key={i}
                   href={route.href}
-                  className="text-sm font-medium transition-colors"
+                  className="text-sm font-semibold transition-colors"
                 >
                   {route.label}
                 </Link>
