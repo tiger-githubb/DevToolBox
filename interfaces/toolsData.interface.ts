@@ -5,6 +5,6 @@ export default interface toolsData {
     link: string | string[];
     category : string;
     tags: string | string[];
-    add_date: Date;
-    contriubtor: string;
+    add_date: string;
+    contributor: string;
 };
