@@ -1,6 +1,6 @@
 import type toolsData from "@/interfaces/toolsData.interface"
 
-const toolsDatabase: toolsData[] = [
+const  toolsDatabase: toolsData[] = [
     {
         "name": "Visual Studio Code",
         "description": "Éditeur de code source open source avec prise en charge de plusieurs langages et extensions.",
@@ -56,3 +56,5 @@ const toolsDatabase: toolsData[] = [
         "contributor": "Nom du contributeur"
     }
 ]
+
+export default toolsDatabase;
