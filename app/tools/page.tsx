@@ -1,5 +1,5 @@
 import React from "react";
-import toolsDatabase from "@/data/toolsData";
+import tools from "@/data/toolsData";
 import Link from "next/link";
 
 function ToolsPage() {
@@ -7,7 +7,7 @@ function ToolsPage() {
   return (
     <div>
       ToolsPage
-      {toolsDatabase.map((tool, index) => (
+      {tools.map((tool, index) => (
         <div key={index}>
           <h2>{tool.name}</h2>
           <p>{tool.description}</p>
