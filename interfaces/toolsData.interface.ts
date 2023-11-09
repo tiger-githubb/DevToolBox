@@ -1,5 +1,5 @@
 
-export default interface toolsData {
+export default interface tool {
     name: string;
     description: string;
     link: string ;
