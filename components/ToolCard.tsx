@@ -1,11 +1,4 @@
-import {
-  ChevronDownIcon,
-  CircleIcon,
-  PlusIcon,
-  StarIcon,
-} from "@radix-ui/react-icons";
-
-import { Button } from "@/components/ui/button";
+'use client'
 import {
   Card,
   CardContent,
@@ -13,16 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { ArrowUpRightFromCircle, CalendarClock, User } from "lucide-react";
 import {
@@ -31,23 +14,25 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import tool from "@/interfaces/toolsData.interface";
 
-export function ToolCard() {
+export function ToolCard({ toolData , Key }: { toolData: tool , Key: number }) {
+  
   return (
-    <Card>
+    <Card key={Key}>
       <CardHeader className="grid grid-cols-[1fr_30px] items-start gap-4 space-y-0">
         <div className="space-y-1">
-          <CardTitle className="hover:underline">DevToolBox</CardTitle>
+          <CardTitle className="hover:underline">{toolData.name}</CardTitle>
           <CardDescription className="hover:underline">
-            <Link href="https://dev-tool-box.vercel.app/" target="bank">
-              https://dev-tool-box.vercel.app/
+            <Link href={toolData.link}  target="bank">
+            {toolData.link}
             </Link>
           </CardDescription>
         </div>
         <div className=" rounded">
           <TooltipProvider>
             <Tooltip>
-              <Link href="https://dev-tool-box.vercel.app/" target="bank">
+              <Link href={toolData.link} target="bank">
                 <TooltipTrigger>
                   <ArrowUpRightFromCircle />
                 </TooltipTrigger>
@@ -63,15 +48,13 @@ export function ToolCard() {
         <div className="mb-3">
           <p className="line-clamp-3  lg:leading-relaxed">
             {" "}
-            DevToolBox is an Togolese site for sharing and discovering Tech
-            products. Users submit products, which are listed in a linear format
-            by day.
+            {toolData.description}
           </p>
         </div>
         <div className="flex space-x-4 text-sm text-muted-foreground">
           <div className="flex items-center">
             <User className="mr-3 h-4 w-4 fill-sky-400 text-sky-400" />
-            By Tiger-Githubb
+            By {toolData.contributor}
           </div>
           <div className="flex items-center"></div>
           <div className="flex justify-center items-center">
