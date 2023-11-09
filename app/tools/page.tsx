@@ -11,7 +11,7 @@ function ToolsPage() {
         <div key={index}>
           <h2>{tool.name}</h2>
           <p>{tool.description}</p>
-          <Link href={tool.link}>Lien vers l'outil</Link>
+          <Link href={tool.link}>Lien</Link>
           <p>Catégorie : {tool.category}</p>
           <p>Tags : {tool.tags}</p>
           <p>
