@@ -1,4 +1,3 @@
-'use client'
 import {
   Card,
   CardContent,
@@ -16,10 +15,10 @@ import {
 } from "@/components/ui/tooltip";
 import tool from "@/interfaces/toolsData.interface";
 
-export function ToolCard({ toolData , Key }: { toolData: tool , Key: number }) {
+export function ToolCard({ toolData }: { toolData: tool}) {
   
   return (
-    <Card key={Key}>
+    <Card >
       <CardHeader className="grid grid-cols-[1fr_30px] items-start gap-4 space-y-0">
         <div className="space-y-1">
           <CardTitle className="hover:underline">{toolData.name}</CardTitle>
