@@ -13,7 +13,7 @@ import {
 
 const routes = [
   {
-    href: "/",
+    href: "/tools",
     label: "Tools",
   },
   {
