@@ -8,7 +8,7 @@ const  tools: tool[] = [
         "category": "Développement Web",
         "tags": ["éditeur de code", "open source", "JavaScript"],
         "add_date": "2023-11-07",
-        "contributor": "Nom du contributeur"
+        "contributor": "Tiger-githubb"
     },
     {
         "name": "Git",
@@ -17,7 +17,7 @@ const  tools: tool[] = [
         "category": "Développement logiciel",
         "tags": ["contrôle de version", "développement", "open source"],
         "add_date": "2023-11-07",
-        "contributor": "Nom du contributeur"
+        "contributor": "Tiger-githubb"
     },
     {
         "name": "React",
@@ -26,7 +26,7 @@ const  tools: tool[] = [
         "category": "Développement Web",
         "tags": ["bibliothèque JavaScript", "interface utilisateur", "frontend"],
         "add_date": "2023-11-07",
-        "contributor": "Nom du contributeur"
+        "contributor": "Tiger-githubb"
     },
     {
         "name": "Postman",
@@ -35,7 +35,7 @@ const  tools: tool[] = [
         "category": "Développement Web",
         "tags": ["API", "tests", "développement"],
         "add_date": "2023-11-07",
-        "contributor": "Nom du contributeur"
+        "contributor": "Tiger-githubb"
     },
     {
         "name": "Docker",
@@ -44,7 +44,7 @@ const  tools: tool[] = [
         "category": "DevOps",
         "tags": ["conteneurisation", "déploiement", "DevOps"],
         "add_date": "2023-11-07",
-        "contributor": "Nom du contributeur"
+        "contributor": "Tiger-githubb"
     },
     {
         "name": "Jira",
@@ -53,7 +53,7 @@ const  tools: tool[] = [
         "category": "Gestion de projet",
         "tags": ["gestion de projet", "suivi des tâches", "collaboration"],
         "add_date": "2023-11-07",
-        "contributor": "Nom du contributeur"
+        "contributor": "Tiger-githubb"
     }
 ]
 
