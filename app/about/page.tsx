@@ -23,29 +23,29 @@ export default function AboutPage() {
     return (
         <div className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">About DevToolbox</h1>
-              <p className="max-w-[900px] text-zinc-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
-                DevToolbox is a comprehensive suite of developer tools designed to streamline your workflow and enhance
-                productivity. Our features include an advanced code editor, real-time collaboration, version control
-                integration, and much more.
-              </p>
-            </div>
-            <div className="flex justify-center gap-8 mt-4">
-              <Link
-                className="text-lg font-medium text-zinc-900 dark:text-zinc-50 hover:text-zinc-700 dark:hover:text-zinc-300"
-                href="#"
-              >
-                Team
-              </Link>
-              <Link
-                className="text-lg font-medium text-zinc-900 dark:text-zinc-50 hover:text-zinc-700 dark:hover:text-zinc-300"
-                href="#"
-              >
-                Contributors
-              </Link>
-            </div>
-            <div className="mx-auto grid max-w-sm items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-2 justify-items-center">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">About DevToolbox</h1>
+          <p className="max-w-[900px] text-zinc-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
+            DevToolbox is a comprehensive suite of developer tools designed to streamline your workflow and enhance
+            productivity. Our features include an advanced code editor, real-time collaboration, version control
+            integration, and much more.
+          </p>
+        </div>
+        <div className="flex justify-center gap-8 mt-4 border-b-2 border-zinc-200 dark:border-zinc-700">
+          <Link
+            className="pb-2 text-lg font-medium text-zinc-900 dark:text-zinc-50 hover:text-zinc-700 dark:hover:text-zinc-300 border-b-2 border-zinc-900 dark:border-zinc-50"
+            href="/"
+          >
+            Team
+          </Link>
+          <Link
+            className="pb-2 text-lg font-medium text-zinc-900 dark:text-zinc-50 hover:text-zinc-700 dark:hover:text-zinc-300 border-b-2 border-transparent"
+            href="/about/contributor"
+          >
+            Contributors
+          </Link>
+        </div>
+            <div className="mx-auto grid max-w-sm items-start gap-8 mt-10 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-2 justify-items-center ">
               {members.map((member, i) =>(
                 <div className="grid gap-1 items-center text-center" key={i} >
                   <img
@@ -80,11 +80,12 @@ export default function AboutPage() {
                     <a aria-label={"${member.name} Github"} href={member.github} key={i}>
                       <Github />
                     </a>
+                    
                   </div>
                 </div>
               ))}
             </div>
-            <div className="flex justify-center gap-2 mt-4">
+            <div className="flex justify-center gap-2 mt-8">
             <Button variant={"default"}>
                   <span className="pr-3">Contribute on Github</span>
                 </Button>
