@@ -1,155 +1,89 @@
+"use client";
 import React from "react";
 import { Button } from "./ui/button";
-import Link from "next/link";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const routes = [
   {
-    href: "/",
-    label: "CMS",
+    category: "Content Management",
   },
   {
-    href: "/",
-    label: "Data Analysis",
+    category: "Data Analysis",
   },
   {
-    href: "/",
-    label: "E-commerce",
+    category: "E-commerce",
   },
   {
-    href: "/",
-    label: "Version Control",
+    category: "Version Control",
   },
   {
-    href: "/",
-    label: "Database",
+    category: "Database",
   },
   {
-    href: "/",
-    label: "Web Development",
+    category: "Web Development",
   },
   {
-    href: "/",
-    label: "Frontend Frameworks",
+    category: "Frontend Frameworks",
   },
   {
-    href: "/",
-    label: "Backend Frameworks",
+    category: "Backend Frameworks",
   },
   {
-    href: "/",
-    label: "Cloud Services",
+    category: "Cloud Services",
   },
   {
-    href: "/",
-    label: "Mobile App Development",
+    category: "Mobile App Development",
   },
   {
-    href: "/",
-    label: "DevOps",
+    category: "DevOps",
   },
   {
-    href: "/",
-    label: "Security",
+    category: "Machine Learning",
   },
   {
-    href: "/",
-    label: "Machine Learning",
+    category: "API Integration",
   },
   {
-    href: "/",
-    label: "API Integration",
+    category: "Content Management",
   },
   {
-    href: "/",
-    label: "Testing and QA",
+    category: "Design and UI/UX",
   },
   {
-    href: "/",
-    label: "Content Management",
+    category: "Productivity",
   },
   {
-    href: "/",
-    label: "Design and UI/UX",
-  },
-  {
-    href: "/",
-    label: "Productivity",
-  },
-  {
-    href: "/",
-    label: "Monitoring and Analytics",
-  },
-  {
-    href: "/",
-    label: "IoT",
-  },
-  {
-    href: "/",
-    label: "Big Data",
-  },
-  {
-    href: "/",
-    label: "Blockchain",
-  },
-  {
-    href: "/",
-    label: "Automation",
-  },
-  {
-    href: "/",
-    label: "AI and Chatbots",
-  },
-  {
-    href: "/",
-    label: "Virtual Reality (VR)",
-  },
-  {
-    href: "/",
-    label: "Augmented Reality (AR)",
-  },
-  {
-    href: "/",
-    label: "Audio and Video Processing",
-  },
-  {
-    href: "/",
-    label: "Data Visualization",
-  },
-  {
-    href: "/",
-    label: "Geospatial and Mapping",
-  },
-  {
-    href: "/",
-    label: "Serverless Computing",
+    category: "Big Data",
   },
 ];
 
-export default function CategoryTabs() {
+export interface CategoryTabsProps {
+  selectedCategory: string | null;
+  onCategoryChange: (category: string | null) => void;
+}
+
+const CategoryTabs: React.FC<CategoryTabsProps> = ({ selectedCategory, onCategoryChange }) => {
   return (
     <>
       <div className="md:container my-6">
         <ScrollArea className=" whitespace-nowrap rounded-md border">
           <div className="flex w-max space-x-4 p-4 items-center lg:space-x-6">
-            <Button asChild variant={"default"}>
-              <Link
-                href="/"
-                className="text-sm font-semibold transition-colors"
-              >
-                active
-              </Link>
+          <Button
+              asChild
+              key="all-categories"
+              variant={`${selectedCategory === null ? 'default' : 'ghost'}`}
+              onClick={() => onCategoryChange(null)}
+            >
+              <span className={`text-sm font-semibold transition-colors ${selectedCategory === null ? 'text-primary' : ''}`}>
+                Toutes les catégories
+              </span>
             </Button>
             {routes.map((route, i) => (
-              <Button asChild key={i} variant={"ghost"}>
-                <Link
-                  key={i}
-                  href={route.href}
-                  className="text-sm font-semibold transition-colors"
-                >
-                  {route.label}
-                </Link>
-              </Button>
+              <Button asChild key={i} variant={`${selectedCategory === route.category ? 'default' : 'ghost'}`} onClick={() => onCategoryChange(route.category)}>
+              <span className={`text-sm font-semibold transition-colors ${selectedCategory === route.category ? 'text-primary' : ''}`}>
+                {route.category}
+              </span>
+            </Button>
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -158,3 +92,5 @@ export default function CategoryTabs() {
     </>
   );
 }
+
+export default CategoryTabs;
