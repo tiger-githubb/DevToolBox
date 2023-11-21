@@ -20,8 +20,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   });
 
   // renderer.use(hljsPlugin());
-  // renderer.use(bookmarkPlugin());
-
+  renderer.use(bookmarkPlugin(undefined));
 
   const html = await renderer.render(...blocks);
 
