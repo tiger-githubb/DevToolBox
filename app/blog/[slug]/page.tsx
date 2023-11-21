@@ -4,6 +4,7 @@ import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import { notFound } from "next/navigation";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import "@/app/blog/[slug]/BlogComponent.scss";
 
 type Data = {
   html: string;
