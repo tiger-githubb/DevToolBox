@@ -175,3 +175,21 @@ div.notion-code {
   }
 }
 
+/* divider */
+hr {
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+
+
+/* columns */
+
+div.notion-column_list {
+  display: flex;
+
+  div.notion-column {
+    flex: 1;
+  }
+}
+
+
