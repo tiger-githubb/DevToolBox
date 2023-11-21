@@ -1,3 +1,5 @@
+/* @import '@notion-render/client/sass/theme.scss'; */
+@import '/node_modules/@notion-render/client/sass/theme.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,3 +50,39 @@
     --ring: 263.4 70% 50.4%;
   }
 }
+
+p {
+  min-height: 1.87em;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 3px 2px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+  padding: 3px 2px;
+}
+
+h1 {
+  font-size: 1.875em;
+  margin-top: 1.1em;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 0.93em;
+  margin-bottom: 1px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25em;
+  margin-top: 0.8em;
+  margin-bottom: 1px;
+  font-weight: 600;
+}
+
