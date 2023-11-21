@@ -192,4 +192,16 @@ div.notion-column_list {
   }
 }
 
+/* image */
+figure {
+  legend {
+    padding-top: 6px;
+    padding-left: 6px;
+    padding-left: 2px;
+    line-height: 1.4;
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.65);
+  }
+}
+
 
