@@ -3,6 +3,11 @@ import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 import { notFound } from "next/navigation";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+
+type Data = {
+  html: string;
+};
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const post = await fetchPageBySlug(params.slug);
@@ -17,7 +22,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
   // renderer.use(hljsPlugin());
   // renderer.use(bookmarkPlugin());
 
+
   const html = await renderer.render(...blocks);
 
-  return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
+  return (
+    <div
+      className="notion-render"
+      style={{ maxWidth: "800px", margin: "auto" }}
+      dangerouslySetInnerHTML={{ __html: html }}
+    ></div>
+  );
 }
