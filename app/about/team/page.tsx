@@ -17,7 +17,7 @@ const members = [
     },
     ];
 
-export default function Team() {
+export default function TeamPage() {
     return (
         <div className="mx-auto grid max-w-sm items-start gap-8 mt-10 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-2 justify-items-center ">
         {members.map((member, i) =>(
