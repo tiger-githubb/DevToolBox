@@ -8,7 +8,7 @@ export default function Component() {
           Our Contributors
         </h2>
 
-        <p className="mx-auto max-w-[700px] text-zinc-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
+        <p className="mx-auto max-w-[600px] text-zinc-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4 dark:text-zinc-400">
           We are grateful for the wonderful team of developers who contribute to
           our project.
         </p>
