@@ -12,7 +12,7 @@ const members = [
   },
   {
     src: "https://st3.depositphotos.com/3538469/15313/i/380/depositphotos_153133094-stock-photo-business-man-symbol.jpg",
-    name: "Désié Gnanyome",
+    name: "Désiré Gnanyome",
     profession: "Web Developer",
     linkedIn: "/",
     github: "/",
