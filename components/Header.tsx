@@ -17,7 +17,7 @@ const routes = [
     label: "Tools",
   },
   {
-    href: "/",
+    href: "/about",
     label: "About",
   },
   {
