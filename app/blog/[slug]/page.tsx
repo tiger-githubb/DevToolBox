@@ -31,7 +31,7 @@ export default async function Article({
 
   return (
     <>
-      <div style={{ maxWidth: "800px", margin: "auto" }}  className="mt-2">
+      <div style={{ maxWidth: "800px", margin: "auto" }}  className=" pt-8 px-4">
         <div className="w-full h-full flex flex-col items-center justify-center my-4">
           <img
             src={post.cover?.external?.url || ""}
@@ -42,7 +42,7 @@ export default async function Article({
         <h1>{post.properties.Title.rich_text[0].text.content}</h1>
       </div>
       <div
-        className="notion-render"
+        className="notion-render px-4"
         style={{ maxWidth: "800px", margin: "auto" }}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
