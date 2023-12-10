@@ -1,4 +1,4 @@
-import "server-only";
+// import "server-only";
 
 import { Client } from "@notionhq/client";
 import React from "react";
