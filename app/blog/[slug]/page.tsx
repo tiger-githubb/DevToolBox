@@ -5,6 +5,9 @@ import hljsPlugin from "@notion-render/hljs-plugin";
 import { notFound } from "next/navigation";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import "@/app/blog/[slug]/BlogComponent.scss";
+import "@notion-render/client/sass/theme.scss";
+import "@notion-render/client/sass/mixins/_colors.scss";
+import "@notion-render/client/sass/variables/_colors.scss";
 
 type Data = {
   html: string;
@@ -24,10 +27,10 @@ export default async function Article({
     client: notion,
   });
 
-  // renderer.use(hljsPlugin());
+  renderer.use(hljsPlugin(post));
   renderer.use(bookmarkPlugin(undefined));
-
   const html = await renderer.render(...blocks);
+
 
   return (
     <>
