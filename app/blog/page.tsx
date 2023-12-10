@@ -8,13 +8,13 @@ export default async function blog() {
 
   return (
     <>
-      <div className= "py-24 sm:py-32">
+      <div className= "py-24 sm:py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Nos Articles de blog
             </h2>
-            <p className="mt-2 text-lg leading-8 text-primary-foreground">
+            <p className="mt-2 text-lg leading-8 ">
               Learn how to grow your business with our expert advice.
             </p>
           </div>
@@ -24,6 +24,9 @@ export default async function blog() {
                 key={article.id}
                 className="flex max-w-xl flex-col items-start justify-between"
               >
+            <a href="#">
+              <img  className="object-cover h-52 w-96 object-center pb-3 rounded-t-lg "  src={article.cover?.external.url} alt=""  />
+            </a>
                 <div className="flex items-center gap-x-4 text-xs">
                   <time dateTime={new Date(article.created_time).toLocaleDateString()}className="text-gray-500">
                   {new Date(article.created_time).toLocaleDateString()}
@@ -48,13 +51,13 @@ export default async function blog() {
                 </div>
                 <div className="relative mt-8 flex items-center gap-x-4">
                   <img
-                    src={'profill'}
+                    src={'https://images.unsplash.com/photo-1604145559206-e3bce0040e2d'}
                     alt=""
                     className="h-10 w-10 rounded-full bg-gray-50"
                   />
                   <div className="text-sm leading-6">
                     <p className="font-semibold text-gray-900">
-                      <a href={'#'}>
+                      <a href={'aristidekarbou.pro'}>
                         <span className="absolute inset-0" />
                         {"Aristide KARBOU"}
                       </a>
