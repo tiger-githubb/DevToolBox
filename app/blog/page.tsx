@@ -25,7 +25,7 @@ export default async function blog() {
                 className="flex max-w-xl flex-col items-start justify-between"
               >
             <a href="#">
-              <img  className="object-cover h-52 w-96 object-center pb-3 rounded-t-lg "  src={article.cover?.external.url} alt=""  />
+              <img  className="object-cover h-52 w-96 object-center pb-3 rounded-t-lg"  src={article.cover?.external.url} alt=""  />
             </a>
                 <div className="flex items-center gap-x-4 text-xs">
                   <time dateTime={new Date(article.created_time).toLocaleDateString()}className="text-gray-500">

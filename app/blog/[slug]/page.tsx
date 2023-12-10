@@ -10,10 +10,14 @@ type Data = {
   html: string;
 };
 
-export default async function Article({ params }: { params: { slug: string } }) {
-  const post = await fetchPageBySlug(params.slug);
+export default async function Article({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post: any = await fetchPageBySlug(params.slug);
   if (!post) notFound();
-  
+
   const blocks = await fetchPageBlocks(post.id);
 
   const renderer = new NotionRenderer({
@@ -26,10 +30,23 @@ export default async function Article({ params }: { params: { slug: string } }) 
   const html = await renderer.render(...blocks);
 
   return (
-    <div
-      className="notion-render"
-      style={{ maxWidth: "800px", margin: "auto" }}
-      dangerouslySetInnerHTML={{ __html: html }}
-    ></div>
+    <>
+      <div style={{ maxWidth: "800px", margin: "auto" }}  className="mt-2">
+        <div className="w-full h-full flex flex-col items-center justify-center my-4">
+          <img
+            src={post.cover?.external?.url || ""}
+            alt=""
+            className="object-cover h-72 w-full object-center rounded-lg"
+          />
+        </div>
+        <h1>{post.properties.Title.rich_text[0].text.content}</h1>
+      </div>
+      <div
+        className="notion-render"
+        style={{ maxWidth: "800px", margin: "auto" }}
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
+     <div className="mb-40"></div>
+    </>
   );
 }
