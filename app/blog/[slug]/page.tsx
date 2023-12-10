@@ -10,7 +10,7 @@ type Data = {
   html: string;
 };
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Article({ params }: { params: { slug: string } }) {
   const post = await fetchPageBySlug(params.slug);
   if (!post) notFound();
 
