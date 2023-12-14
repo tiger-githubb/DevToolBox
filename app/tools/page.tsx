@@ -1,25 +1,49 @@
-import React from "react";
-import tools from "@/data/toolsData";
-import Link from "next/link";
+"use client";
+import React, { useState, useEffect } from "react";
 
 function ToolsPage() {
+  const [metadataImage, setMetadataImage] = useState<string | undefined>(
+    undefined
+  );
+
+  const urlMetadata = require("url-metadata");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const options = {
+          mode: "no-cors",
+          includeResponseBody: false,
+        };
+
+        const metadata = await urlMetadata(
+          "https://youtube.com/",
+          options
+        );
+
+        const ogImage = metadata["og:image"] || undefined;
+        setMetadataImage(ogImage);
+
+        console.log("fetched metadata:", metadata);
+        console.log("inside fetchMetadata, ogImage:", ogImage);
+      } catch (err) {
+        console.log("fetch error:", err);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array to run the effect only once on mount
+
+  console.log("outside fetchMetadata, metadataImage:", metadataImage);
 
   return (
-    <div>
-      ToolsPage
-      {tools.map((tool, index) => (
-        <div key={index}>
-          <h2>{tool.name}</h2>
-          <p>{tool.description}</p>
-          <Link href={tool.link}>Lien</Link>
-          <p>Catégorie : {tool.category}</p>
-          <p>Tags : {tool.tags}</p>
-          <p>
-            Ajouté par : {tool.contributor} le {tool.add_date}
-          </p>
-        </div>
-      ))}
-    </div>
+    <>
+      <img
+        src={`${metadataImage}`}
+        className="object-cover h-52 w-96 object-center pb-3 rounded-t-lg"
+        alt=""
+      />
+    </>
   );
 }
 

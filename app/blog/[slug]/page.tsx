@@ -19,6 +19,8 @@ export default async function Article({
   params: { slug: string };
 }) {
   const post: any = await fetchPageBySlug(params.slug);
+  console.log(post);
+
   if (!post) notFound();
 
   const blocks = await fetchPageBlocks(post.id);
@@ -26,18 +28,25 @@ export default async function Article({
   const renderer = new NotionRenderer({
     client: notion,
   });
+  let coverurl: string = "";
+  if (post.cover?.type === "external") {
+    coverurl = post.cover?.external.url;
+  } else {
+    coverurl = post.cover?.file?.url;
+  }
+  console.log('value:',coverurl);
+  
 
   renderer.use(hljsPlugin(post));
   renderer.use(bookmarkPlugin(undefined));
   const html = await renderer.render(...blocks);
 
-
   return (
     <>
-      <div style={{ maxWidth: "800px", margin: "auto" }}  className=" pt-8 px-4">
+      <div style={{ maxWidth: "800px", margin: "auto" }} className=" pt-8 px-4">
         <div className="w-full h-full flex flex-col items-center justify-center my-4">
           <img
-            src={post.cover?.external?.url || ""}
+            src={coverurl || ""}
             alt=""
             className="object-cover h-72 w-full object-center rounded-lg"
           />
@@ -49,7 +58,7 @@ export default async function Article({
         style={{ maxWidth: "800px", margin: "auto" }}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
-     <div className="mb-40"></div>
+      <div className="mb-40"></div>
     </>
   );
 }
