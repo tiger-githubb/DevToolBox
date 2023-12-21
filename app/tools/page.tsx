@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import ErrorPage from "../error";
 
 function ToolsPage() {
   const [metadataImage, setMetadataImage] = useState<string | undefined>(
@@ -32,7 +33,19 @@ function ToolsPage() {
     };
 
     fetchData();
-  }, []); // Empty dependency array to run the effect only once on mount
+  }, []); 
+
+  let error: Error | null = null;
+  try {
+   
+  } catch (error) {
+    console.error(error);
+  }
+
+  if (error) {
+    return <ErrorPage error={error} reset={() => window.location.reload()} />;
+  }
+
 
   console.log("outside fetchMetadata, metadataImage:", metadataImage);
 
