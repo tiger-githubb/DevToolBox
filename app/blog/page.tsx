@@ -1,12 +1,21 @@
 import { fetchPages } from "@/lib/notion";
 import Link from "next/link";
 import React from "react";
+import ErrorPage from "../error";
 
 export default async function blog() {
   const notionPages = await fetchPages();
   const articles: any = notionPages.results;
+  let error: Error | null = null;
+  try {
+   
+  } catch (error) {
+    console.error(error);
+  }
 
-
+  if (error) {
+    return <ErrorPage error={error} reset={() => window.location.reload()} />;
+  }
 
   return (
     <>
