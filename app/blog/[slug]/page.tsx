@@ -8,6 +8,7 @@ import "@/app/blog/[slug]/BlogComponent.scss";
 import "@notion-render/client/sass/theme.scss";
 import "@notion-render/client/sass/mixins/_colors.scss";
 import "@notion-render/client/sass/variables/_colors.scss";
+import ErrorPage from "@/app/error";
 
 type Data = {
   html: string;
@@ -19,11 +20,18 @@ export default async function Article({
   params: { slug: string };
 }) {
   const post: any = await fetchPageBySlug(params.slug);
-  console.log(post);
-
-  if (!post) notFound();
 
   const blocks = await fetchPageBlocks(post.id);
+  let error: Error | null = null;
+  try {
+   
+  } catch (error) {
+    console.error(error);
+  }
+
+  if (error) {
+    return <ErrorPage error={error} reset={() => window.location.reload()} />;
+  }
 
   const renderer = new NotionRenderer({
     client: notion,
@@ -36,7 +44,6 @@ export default async function Article({
   }
   console.log('value:',coverurl);
   
-
   renderer.use(hljsPlugin(post));
   renderer.use(bookmarkPlugin(undefined));
   const html = await renderer.render(...blocks);
