@@ -1,6 +1,7 @@
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const members = [
   {
@@ -51,7 +52,8 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-sm items-start gap-8 mt-10 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-2 justify-items-center ">
           {members.map((member, i) => (
             <div className="grid gap-1 items-center text-center" key={i}>
-              <img
+             
+              <Image
                 alt="Member pic"
                 className="aspect-content overflow-hidden rounded-full object-cover object-center"
                 key={i}
