@@ -10,8 +10,7 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['images.unsplash.com'],
-    domains: ['st3.depositphotos.com'],
+    domains: ['images.unsplash.com','st3.depositphotos.com','prod-files-secure.s3.us-west-2.amazonaws.com'],
   },
 }
 
