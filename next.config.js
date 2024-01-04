@@ -10,14 +10,8 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/photo-1611348586804-61bf6c080437',
-      },
-    ],
+    domains: ['images.unsplash.com'],
+    domains: ['st3.depositphotos.com'],
   },
 }
 
